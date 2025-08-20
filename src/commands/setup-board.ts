@@ -1,6 +1,6 @@
 import axios from 'axios';
-import chalk from 'chalk';
-import ora from 'ora';
+import chalk = require('chalk');
+import ora = require('ora');
 
 interface SetupBoardOptions {
   name?: string;
@@ -98,7 +98,7 @@ class GitHubProjectManager {
         id: response.data.id,
         url: response.data.html_url
       };
-    } catch (error) {
+    } catch (error: any) {
       if (error.response?.status === 422) {
         throw new Error(`Project Board "${this.config.boardName}" existiert bereits`);
       }

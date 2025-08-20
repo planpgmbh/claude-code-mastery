@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { glob } from 'glob';
+const { glob } = require('glob');
 
 export interface ProjectInfo {
   name?: string;

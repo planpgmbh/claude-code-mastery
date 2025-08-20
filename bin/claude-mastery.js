@@ -2,24 +2,12 @@
 
 const { program } = require('commander');
 const chalk = require('chalk');
-const boxen = require('boxen');
-const { initProject } = require('../dist/commands/init');
-const { setupBoard } = require('../dist/commands/setup-board');
-const { analyzeProject } = require('../dist/commands/analyze');
 
-// Banner anzeigen
-console.log(
-  boxen(
-    chalk.blue.bold('🤖 Claude Code Mastery') + '\n' +
-    chalk.gray('Multi-Agent Development System'),
-    {
-      padding: 1,
-      margin: 1,
-      borderStyle: 'round',
-      borderColor: 'blue'
-    }
-  )
-);
+// Banner anzeigen (ohne externe Abhängigkeiten)
+console.log('');
+console.log('🤖 Claude Code Mastery');
+console.log('Multi-Agent Development System');
+console.log('');
 
 program
   .name('claude-mastery')
@@ -34,9 +22,10 @@ program
   .option('-t, --type <type>', 'Projekt-Typ (react, nodejs, fullstack)')
   .action(async (options) => {
     try {
+      const { initProject } = require('../dist/commands/init');
       await initProject(options);
     } catch (error) {
-      console.error(chalk.red('❌ Fehler:'), error.message);
+      console.error('❌ Fehler:', error.message);
       process.exit(1);
     }
   });
@@ -44,13 +33,14 @@ program
 program
   .command('setup-board')
   .description('📊 Erstellt GitHub Project Board mit Multi-Agent Workflow')
-  .option('-n, --name <name>', 'Board Name', 'Main Development Board')
+  .option('-n, --name <n>', 'Board Name', 'Main Development Board')
   .option('-r, --repo <repo>', 'GitHub Repository (owner/repo)')
   .action(async (options) => {
     try {
+      const { setupBoard } = require('../dist/commands/setup-board');
       await setupBoard(options);
     } catch (error) {
-      console.error(chalk.red('❌ Fehler:'), error.message);
+      console.error('❌ Fehler:', error.message);
       process.exit(1);
     }
   });
@@ -60,9 +50,10 @@ program
   .description('🔍 Analysiert aktuelles Projekt für Claude Code Integration')
   .action(async () => {
     try {
+      const { analyzeProject } = require('../dist/commands/analyze');
       await analyzeProject();
     } catch (error) {
-      console.error(chalk.red('❌ Fehler:'), error.message);
+      console.error('❌ Fehler:', error.message);
       process.exit(1);
     }
   });
@@ -71,14 +62,14 @@ program
   .command('status')
   .description('📊 Zeigt Status der Claude Code Integration')
   .action(() => {
-    console.log(chalk.yellow('🔄 Status Check wird implementiert...'));
+    console.log('🔄 Status Check wird implementiert...');
   });
 
 program
   .command('update')
   .description('⬆️ Aktualisiert Claude Code Templates auf neueste Version')
   .action(() => {
-    console.log(chalk.yellow('🔄 Update wird implementiert...'));
+    console.log('🔄 Update wird implementiert...');
   });
 
 // Hilfe anzeigen wenn keine Argumente

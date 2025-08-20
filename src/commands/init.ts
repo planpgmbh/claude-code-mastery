@@ -1,8 +1,8 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import chalk from 'chalk';
-import inquirer from 'inquirer';
-import ora from 'ora';
+import chalk = require('chalk');
+import inquirer = require('inquirer');
+import ora = require('ora');
 import { ProjectAnalyzer } from '../utils/project-analyzer';
 import { TemplateManager } from '../utils/template-manager';
 import { GitHubIntegration } from '../utils/github-integration';
@@ -25,9 +25,9 @@ export async function initProject(options: InitOptions): Promise<void> {
     spinner.succeed('✅ Projekt analysiert');
     
     // 2. Projekt-Typ bestimmen oder abfragen
-    let projectType = options.type || projectInfo.detectedType;
+    let projectType = options.type || projectInfo.detectedType || 'generic';
     
-    if (!projectType) {
+    if (!options.type && !projectInfo.detectedType) {
       spinner.stop();
       const { selectedType } = await inquirer.prompt([
         {
