@@ -1,101 +1,280 @@
-# Claude Code Mastery: Umfassender Leitfaden für Web App Entwickler
+# Claude Code Workflow Grundlagen
 
-Die Recherche zu Claude Code-Workflows für Web-Entwicklung zeigt eine revolutionäre Veränderung in der Art, wie individuelle Entwickler komplexe Web-Anwendungen erstellen. **Claude Code hat die Entwicklungszeit für etablierte Teams um 60-97% reduziert**, während die Code-Qualität durch systematische Test-Driven Development-Ansätze verbessert wurde. Besonders bemerkenswert ist Kieran Klaassens "Compounding Engineering"-Methodologie, die selbstverbessernde Entwicklungssysteme schafft, wo jede Iteration die nächste schneller, sicherer und besser macht.
+## Core Workflow Commands
 
-Die Community zeigt überwältigende Akzeptanz mit realistischen Erwartungen - Entwickler migrieren massenhaft von Cursor und anderen KI-Coding-Tools zu Claude Code. Die Schlüsselerkenntnis aus mehreren Produktionsteams: Claude Code funktioniert am besten, wenn es nicht als Coding-Tool, sondern als umfassender Entwicklungspartner behandelt wird, der mit jeder Interaktion lernt und sich verbessert.
+### Essential Development Commands
+```bash
+# Project Initialization
+/rsi                    # Read, Setup, Initialize - Load all key project files
+/context-prime         # Load comprehensive project understanding
+/load-llms-txt        # Import project-specific terminology and config
 
-## Technische Grundlagen und optimierte Konfiguration
+# Development Workflow
+/tdd                  # Test-Driven Development with Red-Green-Refactor
+/commit               # Create Conventional Commits with appropriate emojis
+/create-pr           # Automate entire Pull Request workflow
+/fix-github-issue    # Analyze and resolve GitHub Issues systematically
 
-**Installation und Authentifizierung** erfolgt über drei Hauptmethoden: NPM-Installation (`npm install -g @anthropic-ai/claude-code`), native Binärdatei-Installation oder Enterprise-Plattformen wie Amazon Bedrock. Die Community empfiehlt stark die Verwendung von Claude App Subscriptions ($20/Monat) für individuelle Entwickler, da diese sowohl Claude Code als auch die Web-Schnittstelle abdecken.
+# Code Analysis
+/code_analysis      # Deep code inspection with optimization suggestions
+/cost               # Token usage optimization
+/compact            # Minimize context for performance
+/clear              # Clear context when switching tasks
+```
 
-**Systemoptimierung** erfordert spezifische Konfigurationen für Web-Entwicklung. Die wichtigsten Performance-Einstellungen umfassen strategische Token-Verwaltung durch Umgebungsvariablen wie `DISABLE_NON_ESSENTIAL_MODEL_CALLS=1` und `CLAUDE_CODE_MAX_OUTPUT_TOKENS=8192`. **IDE-Integration** funktioniert nahtlos mit VS Code über automatische Extension-Installation und JetBrains IDEs durch Marketplace-Plugins.
+## CLAUDE.md Best Practices
 
-Die **hierarchische Konfigurationsarchitektur** verwendet `.claude/settings.json` Dateien auf Projekt- und Benutzerebene. Erfolgreiche Teams implementieren ausgeklügelte Berechtigungsstrukturen, die sichere Dateizugriffe gewährleisten, während sensible Informationen wie `.env` Dateien und Geheimnisse geschützt bleiben.
+### Essential Project Configuration
+```markdown
+## Development Commands
+- `npm run dev` - Development server
+- `npm run build` - Production build
+- `npm test` - Run test suite
 
-## Workflow-Methodologien und bewährte Praktiken
+## Code Standards
+- ES Module syntax
+- Functional components with hooks
+- TypeScript strict mode
+- 80%+ test coverage
 
-**Compounding Engineering von Kieran Klaassen** steht als die ausgereifteste Methodologie hervor. Dieser systematische Ansatz verwandelt jeden Pull Request, Bugfix und Code Review in eine dauerhafte Lektion, die Entwicklungstools automatisch anwenden. Die **Kernprinzipien** umfassen den Aufbau selbstverbessernder Entwicklungssysteme mit Gedächtnis, die Verwendung paralleler KI-Instanzen für verschiedene Aufgaben und die Erfassung architektonischer Entscheidungen in `llms.txt` Dateien.
+## Architecture Guidelines
+- Component-based architecture
+- API-first design
+- Input validation required
+- CSRF protection enabled
 
-**Produktionsergebnisse** zeigen dramatische Verbesserungen: Die Zeit bis zur Auslieferung fiel von über einer Woche auf 1-3 Tage, Bugs wurden erheblich häufiger vor der Produktion abgefangen, und PR-Review-Zyklen reduzierten sich von Tagen auf Stunden.
+## Performance Requirements
+- Core Web Vitals optimization
+- Code splitting implementation
+- Lazy loading for routes
+```
 
-**Offizielle Anthropic Workflow-Patterns** folgen bewährten Strukturen: "Explore, Plan, Code, Commit" für komplexe Features, Test-Driven Development mit unabhängigen Subagenten zur Verifikation, und visueller Entwicklung durch Screenshot-Feedback-Schleifen.
+## Workflow Patterns
 
-## Custom Commands und Prompt-Templates für Web-Apps
+### 1. Bug Resolution Workflow
+```bash
+# Step 1: Analyze
+/analyze-bug "Description of the bug"
+# → Creates structured GitHub issue in "Ready" column
 
-**Versionskontrolle und Git Commands** bilden das Rückgrat erfolgreicher Workflows. Der `/commit` Command erstellt Conventional Commits mit angemessenen Emojis, während `/create-pr` den gesamten Pull Request-Workflow automatisiert. Der `/fix-github-issue` Command analysiert und behebt GitHub Issues mit strukturiertem Ansatz.
+# Step 2: Human Review (Required)
+# → Review analysis and move to "To Do" manually
 
-**Code-Analyse und Testing Commands** bieten erweiterte Inspektionsfähigkeiten. Der `/tdd` Command führt Test-Driven Development mit Red-Green-Refactor-Disziplin durch, während `/code_analysis` tiefe Code-Inspektion mit Knowledge Graph-Generierung und Optimierungsvorschlägen bietet.
+# Step 3: Implementation
+/process-todo-queue-advanced
+# → Autonomous implementation with testing
+```
 
-**Context Loading Commands** optimieren die KI-assistierte Entwicklung. `/context-prime` lädt umfassendes Projektverständnis, `/load-llms-txt` importiert spezifische Terminologie und Konfigurationen, und `/rsi` (Read, Setup, Initialize) lädt alle Befehle und Schlüsselprojektdateien für optimierte Performance.
+### 2. Feature Development Workflow
+```bash
+# Step 1: Planning
+/plan-feature-comprehensive "Feature description"
+# → Complete technical specification in "Ready"
 
-## CLAUDE.md Konfiguration und Projektgedächtnis
+# Step 2: Human Approval (Required)
+# → Review architecture and approve plan
 
-**Sprachspezifische Beispiele** zeigen die Macht gezielter Projektkonfiguration. Für TypeScript/React-Projekte dokumentiert CLAUDE.md Entwicklungsbefehle (`npm run dev`, `npm run build`), Code-Standards (ES-Module-Syntax, funktionale Komponenten mit Hooks) und Testing-Richtlinien (React Testing Library, 80%+ Testabdeckung).
+# Step 3: Implementation
+/implement-complex-feature [issue-number]
+# → Full feature implementation with tests
+```
 
-**Domain-spezifische Patterns** für Web-Anwendungen definieren Architektur-Richtlinien (komponentenbasierte Architektur, API-first Design), Sicherheitsanforderungen (Input-Validierung, CSRF-Schutz) und Performance-Standards (Core Web Vitals Optimierung, Code Splitting).
+### 3. Code Quality Workflow
+```bash
+# Before coding
+/tdd                    # Start with test-driven approach
+/code_analysis         # Understand current codebase state
 
-**Erfolgreiche Teams** verwenden CLAUDE.md als lebende Dokumentation, die mit dem Projekt wächst und alle architektonischen Entscheidungen, Konventionen und gelernten Lektionen erfasst.
+# During development
+# → Write failing tests first
+# → Implement minimum code to pass
+# → Refactor while tests remain green
 
-## GitHub Integration und CI/CD Automatisierung
+# After coding
+/commit                # Create proper commit message
+/create-pr            # Generate PR with description
+```
 
-**GitHub Actions Integration** ermöglicht nahtlose Automatisierung durch offizielle `anthropics/claude-code-action`. Die Konfiguration unterstützt automatisierte Code Reviews, Issue-Auflösung und umfassende CI/CD-Pipelines. **Multi-Cloud-Deployment-Strategien** generieren Matrix-basierte Workflows für AWS, Azure und GCP mit Blue-Green und Canary-Deployment-Strategien.
+## Multi-Agent Coordination
 
-**PR Review Automation** zeigt beeindruckende Ergebnisse - Claude findet tatsächliche Logikfehler und Sicherheitsprobleme, während menschliche Reviewer sich auf Architekturentscheidungen konzentrieren können. Die Reviewzeit wird reduziert bei gleichzeitiger Qualitätsverbesserung.
+### Agent Responsibilities
+- **Analysis Agent**: Planning, research, specifications → "Ready" column
+- **Implementation Agent**: Coding, testing, deployment → autonomous after approval
 
-**Issue-to-Code Workflows** verwandeln GitHub Issues direkt in funktionierenden Code. Teams berichten von 90%+ der Git-Interaktionen, die durch Claude Code abgewickelt werden, mit signifikanten Verbesserungen bei der Onboarding-Zeit neuer Entwickler.
+### Human Control Points
+- **Analysis → Implementation**: Manual review and approval required
+- **Emergency Stop**: Can pause any agent at any time
+- **Quality Gates**: Automatic stops for critical issues
 
-## API-Development und Testing mit Claude Code
+### Status Monitoring
+```bash
+/agent-status          # Real-time agent health dashboard
+/agent-analytics       # Performance metrics
+/coordinate-agents     # Inter-agent workflow orchestration
+```
 
-**Test-Driven API Development** stellt sich als die erfolgreichste Methodologie heraus. Claude Code generiert zuerst umfassende Tests basierend auf Input/Output-Paaren, implementiert dann die API um diese Tests zu bestehen. Diese Herangehensweise gewährleistet robuste, gut getestete APIs von Anfang an.
+## Git Integration Patterns
 
-**OpenAPI-Integration** ermöglicht automatische Generierung und Wartung von Swagger-Spezifikationen, API-Dokumentation mit Beispielen und Client-SDK-Generierung in mehreren Sprachen. **Sicherheitspatterns** implementieren automatisch Input-Validierung, Authentifizierung und Autorisierung.
+### Branch Management
+```bash
+# Feature branches
+git checkout -b feature/[issue-number]-[short-description]
 
-**Database Schema Management** zeigt Claude Codes Stärken bei komplexen Datenstrukturen. Das System generiert optimale Datenbankschemas mit korrekter Indizierung, Einschränkungen und Sicherheitsmaßnahmen. **Security-by-Design** Ansätze implementieren row-level security und service-role Beschränkungen automatisch.
+# Conventional Commits (automated by /commit)
+feat: add user authentication system
+fix: resolve mobile navigation bug
+docs: update API documentation
+test: add integration tests for payment flow
+```
 
-## Container-Integration und Deployment
+### PR Workflow (automated by /create-pr)
+1. Generate comprehensive PR description
+2. Include testing checklist
+3. Add relevant reviewers
+4. Link to related issues
+5. Set appropriate labels
 
-**Docker-Optimierung** für Claude Code-Entwicklung verwendet speziell angepasste Container mit allen notwendigen Entwicklungstools. **Kubernetes-Integration** generiert vollständige Manifeste einschließlich Health Checks, Service Mesh Integration und Horizontal Pod Autoscaling Konfigurationen.
+## Performance Optimization
 
-**Infrastructure as Code** durch Terraform-Integration ermöglicht Multi-Cloud-Infrastruktur-Bereitstellung mit State Management und Drift Detection. **Monitoring und Observability** Stacks werden automatisch generiert mit Prometheus/Grafana Dashboards, Alert Manager Konfiguration und verteiltem Tracing.
+### Token Management
+```bash
+# Environment variables for optimization
+CLAUDE_CODE_MAX_OUTPUT_TOKENS=8192
+DISABLE_NON_ESSENTIAL_MODEL_CALLS=1
+DISABLE_TELEMETRY=1
 
-## Fallstudien und messbare Ergebnisse
+# Context optimization commands
+/cost                  # Monitor token usage
+/compact              # Minimize context
+/clear                # Reset context between tasks
+```
 
-**Puzzmo Gaming Platform** demonstriert außergewöhnliche Produktivität - in 6 Wochen wurden jahrelange technische Schulden als "Nebenprojekte" abgearbeitet, während die regulären Aufgaben beibehalten wurden. Konkrete Leistungen umfassten die Konvertierung hunderter React Native Komponenten, Ersatz von 3 komplexen RedwoodJS Systemen und vollständige Monorepo-Umstellung.
+### Model Selection Strategy
+- **Haiku**: Quick tasks, simple fixes
+- **Sonnet**: Daily development work
+- **Opus**: Complex refactoring, architecture decisions
 
-**ThoughtWorks CodeConcise Experiment** zeigt 97% Zeitreduktion für spezifische Anwendungsfälle - was traditionell 2-4 Wochen mit Paar-Entwicklern dauerte, wurde in wenigen Minuten plus Validierungsstunden erledigt.
+## Testing Patterns
 
-**Builder.io Team Erfolge** bei der Verwaltung extrem komplexer Dateien - erfolgreiches Update einer 18.000-Zeilen React-Komponente, bei der andere KI-Tools versagten. Null "Hängenbleiben"-Vorfälle bei großen Dateien.
+### TDD Implementation
+```bash
+# Red Phase: Write failing test
+/tdd "Create user registration function"
+# → Generates comprehensive test cases first
 
-## Performance-Optimierung und Kostenmanagement
+# Green Phase: Implement minimum code
+# → Code implementation to pass tests
 
-**Token-Usage-Optimierung** durch strategische Context-Management-Befehle (`/cost`, `/compact`, `/clear`) und fokussierte CLAUDE.md-Dateien. **Multi-Model-Kostenoptimierung** verwendet Haiku für schnelle Aufgaben, Sonnet 4 für tägliche Entwicklung und Opus 4 für komplexe Refactoring-Arbeiten.
+# Refactor Phase: Optimize while tests pass
+# → Code improvements without breaking functionality
+```
 
-**Memory und Performance Management** mit umgebungsspezifischen Konfigurationen (`CLAUDE_CODE_MAX_OUTPUT_TOKENS=4096`) und Telemetrie-Deaktivierung für schnelleren Startup (`DISABLE_TELEMETRY=1`).
+### Test Coverage Requirements
+- Unit tests: All functions and methods
+- Integration tests: API endpoints and data flow
+- E2E tests: Critical user workflows
+- Minimum 80% code coverage
 
-## Team-Kollaboration und Wissensweitergabe
+## Security Best Practices
 
-**Git Worktrees Pattern** ermöglicht parallele Entwicklung mit separaten Claude-Instanzen für verschiedene Features. **Knowledge Sharing Systems** dokumentieren Sitzungen mit `/project:session-start` Befehlen und erstellen Session-Zusammenfassungen für die Versionskontrolle.
+### Automatic Security Implementation
+- Input validation for all user inputs
+- CSRF protection for forms
+- SQL injection prevention
+- XSS protection headers
+- Authentication and authorization checks
 
-**Multi-Developer Workflows** nutzen gemeinsame CLAUDE.md-Dateien für Konsistenz und koordinieren sich durch Git-Workflows. **Spezialisierte Workflow-Tools** wie Claude Code Flow, Claude Task Master und Claude Squad erweitern die Funktionalität für Team-Umgebungen.
+### File Access Controls
+```bash
+# Automatically protected files
+.env*
+secrets/**
+*.key
+**/node_modules/**
+```
 
-## Sicherheit und Enterprise-Konfiguration
+## Docker Integration
 
-**Sicherheitsmuster** implementieren umfassende Dateizugriffskontrollen mit Deny-Listen für sensitive Dateien (`.env*`, `secrets/**`, private Schlüssel) und WebFetch-Beschränkungen für interne Unternehmensdomänen.
+### Development Workflow
+```bash
+# Container-based development
+/docker-project-init           # Initialize Docker setup
+/traefik-labels               # Generate reverse proxy config
+/domain-config                # Configure domain setup
+/nginx-spa-config            # Optimize for single-page apps
+```
 
-**Enterprise-Integration** unterstützt Amazon Bedrock, Google Vertex AI und Custom-Cloud-Infrastruktur. **Audit und Compliance** Features umfassen ausführliche Protokollierung, erweiterte Aufbewahrungszeiten und Strict-Compliance-Modi für regulierte Umgebungen.
+### Deployment Pipeline
+```bash
+# Production deployment
+/deploy-to-production         # Automated deployment
+/check-container-health       # Health verification
+```
 
-## Implementierungs-Roadmap
+## Error Handling Patterns
 
-**Woche 1 - Grundlagen**: CLAUDE.md-Datei mit Projektstandards einrichten, essentielle MCP-Server installieren (GitHub, Puppeteer), 3-5 Custom Commands für häufige Aufgaben erstellen, grundlegende Git-Workflow-Befehle implementieren.
+### Systematic Bug Resolution
+1. **Reproduce**: Create minimal reproduction case
+2. **Analyze**: Identify root cause with /code_analysis
+3. **Test**: Write test that exposes the bug
+4. **Fix**: Implement solution that passes test
+5. **Verify**: Ensure no regressions introduced
 
-**Woche 2-4 - Intermediate**: Compounding Engineering Prinzipien implementieren, parallele Entwicklung mit Worktrees einrichten, spezialisierte Review Agents erstellen, Hooks für automatisierte Workflows hinzufügen.
+### Performance Issues
+1. **Profile**: Use browser dev tools for performance analysis
+2. **Identify**: Find bottlenecks in rendering or network
+3. **Optimize**: Implement lazy loading, code splitting
+4. **Measure**: Verify improvements with Core Web Vitals
 
-**Monat 2+ - Erweitert**: Custom MCP-Server für spezifische Bedürfnisse entwickeln, GitHub Actions Integration implementieren, umfassende Command-Libraries erstellen, teamspezifische Workflow-Automatisierung entwickeln.
+## Team Collaboration
 
-## Fazit
+### Knowledge Sharing
+- Document all architectural decisions in CLAUDE.md
+- Use conventional commits for clear history
+- Create session summaries with /project:session-start
+- Share workflow patterns through pull requests
 
-Claude Code repräsentiert einen transformativen Wandel in der Web-Entwicklung, mit umfassender Real-World-Validierung und einem ausgedehnten Tooling-Ökosystem. Die Evidenz aus multiplen Fallstudien demonstriert signifikante Produktivitätssteigerungen, wobei Teams 60-97% Zeitreduktionen für spezifische Aufgaben berichten, während Code-Qualität beibehalten oder verbessert wird.
+### Multi-Developer Coordination
+- Use Git worktrees for parallel feature development
+- Coordinate through GitHub issues and project boards
+- Maintain shared CLAUDE.md for consistency
+- Regular sync meetings for architecture alignment
 
-**Der Schlüssel zum Erfolg** liegt in systematischer Workflow-Adoption unter Verwendung etablierter Muster, wobei Kierans Compounding Engineering Ansatz die ausgereifteste Methodologie für selbstverbessernde Entwicklungssysteme darstellt. Die Kombination aus Custom Commands, MCP-Integration und Automatisierungs-Hooks schafft kraftvolle Produktivitätsmultiplikatoren, wenn strategisch implementiert.
+## Implementation Roadmap
 
-Die zentrale Erkenntnis: Claude Code funktioniert am besten als umfassender Entwicklungspartner, der mit jeder Interaktion lernt und sich verbessert, wodurch die Arbeit von morgen exponentiell einfacher wird als die von heute.
+### Week 1: Foundation
+- [ ] Create comprehensive CLAUDE.md file
+- [ ] Set up essential custom commands (/rsi, /commit, /tdd)
+- [ ] Configure Git workflow commands
+- [ ] Implement basic GitHub integration
+
+### Week 2-4: Advanced Workflows
+- [ ] Implement multi-agent coordination
+- [ ] Set up parallel development with worktrees
+- [ ] Create specialized review processes
+- [ ] Add automated workflow hooks
+
+### Month 2+: Optimization
+- [ ] Develop custom workflow commands
+- [ ] Implement team-specific automation
+- [ ] Create comprehensive testing pipelines
+- [ ] Optimize performance and cost management
+
+## Success Metrics
+
+### Measurable Improvements
+- Development time reduction: 60-90%
+- Bug detection: Caught before production
+- PR review time: Reduced from days to hours
+- Code quality: Improved test coverage and consistency
+
+### Key Performance Indicators
+- Time from feature request to deployment
+- Number of bugs found in production
+- Developer onboarding time
+- Code review cycle time
+- Test coverage percentage
+
+---
+
+**Core Principle**: Claude Code works best as a comprehensive development partner that learns and improves with each interaction, making tomorrow's work exponentially easier than today's.

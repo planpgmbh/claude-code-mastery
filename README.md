@@ -21,8 +21,8 @@ Ein vollständiges System für AI-Enhanced Software Development mit:
 | [04_Workflows](docs/04_Projekt_Workflows.md) | Multi-Agent Entwicklungsprozesse |
 | [05_Troubleshooting](docs/05_Troubleshooting_Guide.md) | System Debugging & Problemlösung |
 | [06_Infrastructure](docs/06_Server_Infrastructure.md) | Docker/Traefik + VS Code Setup |
-| [07_Kanban](docs/07_Automated_Kanban_Workflow.md) | GitHub Board Automation |
-| [08_Multi-Agent](docs/08_Multi_Agent_System.md) | Spezialisierte Agent-Architektur |
+| [07_Kanban](docs/07_Automated_kanban_workflow.md) | GitHub Board Automation |
+| [08_Multi-Agent](docs/08_Multi_agent_system.md) | Spezialisierte Agent-Architektur |
 
 ## 🚀 Quick Start
 
