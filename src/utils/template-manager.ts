@@ -16,10 +16,7 @@ export class TemplateManager {
     // 2. GitHub Templates kopieren
     await this.copyGitHubTemplates(force);
     
-    // 3. Environment File kopieren
-    await this.copyEnvironmentFile(force);
-    
-    // 4. Git Ignore erweitern
+    // 3. Git Ignore erweitern
     await this.updateGitIgnore(force);
   }
   
@@ -53,16 +50,6 @@ export class TemplateManager {
     await this.copyDirectoryRecursive(sourceDir, targetDir, force);
   }
   
-  private async copyEnvironmentFile(force: boolean): Promise<void> {
-    const sourcePath = path.join(__dirname, '../../.env.example');
-    const targetPath = path.join(process.cwd(), '.env.example');
-    
-    if (await this.fileExists(sourcePath)) {
-      if (force || !await this.fileExists(targetPath)) {
-        await fs.copyFile(sourcePath, targetPath);
-      }
-    }
-  }
   
   private async updateGitIgnore(force: boolean): Promise<void> {
     const claudeIgnoreContent = `
@@ -70,13 +57,6 @@ export class TemplateManager {
 .claude/
 claude-sessions/
 .claude-context/
-
-# Environment files
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 `;
     
     const gitIgnorePath = path.join(process.cwd(), '.gitignore');

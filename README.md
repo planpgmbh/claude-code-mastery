@@ -18,32 +18,22 @@ Integriert **Multi-Agent Claude Code System** in Ihre bestehenden Web-Projekte:
 
 ## 🚀 Installation & Usage
 
-### **Schnellstart - Bestehendes Projekt**
+### **Schnellstart - Ein-Befehl Installation**
 
 ```bash
 # 1. In Ihr bestehendes Projekt navigieren
 cd /path/to/your/existing/project
 
-# 2. Claude Code Mastery integrieren
-npx claude-code-mastery-template init
+# 2. Claude Code Mastery installieren (alles automatisch)
+curl -s https://raw.githubusercontent.com/planpgmbh/claude-code-mastery/main/install.sh | bash
 
-# 3. GitHub Project Board erstellen (optional)
-npx claude-code-mastery-template setup-board
+# 3. Claude Code starten
+claude init && claude /rsi
 
 # 4. Fertig! 🎉
 ```
 
-### **Globale Installation**
-
-```bash
-# Global installieren für mehrfache Nutzung
-npm install -g claude-code-mastery-template
-
-# Dann in jedem Projekt verwenden
-claude-mastery init
-```
-
-## 📋 Was passiert beim `init`?
+## 📋 Was passiert bei der Installation?
 
 ### **Automatische Projekt-Erkennung**
 - ✅ **React SPA** (mit TypeScript/JavaScript)
@@ -53,24 +43,23 @@ claude-mastery init
 - ✅ **Vue.js Anwendungen**
 - ✅ **Generic Web Projekte**
 
-### **Integration ohne Überschreibung**
+### **Was wird installiert (ohne Überschreibung)**
 ```bash
 Ihr Projekt/
-├── .vscode/           # ✅ VS Code Claude Integration
-├── .github/           # ✅ Workflows & Issue Templates
-├── CLAUDE.md          # ✅ Projekt-spezifische Config
-├── .env.example       # ✅ API Keys Template
-└── package.json       # ✅ Erweitert (nicht überschrieben)
+├── docs/                    # ✅ Claude Code Workflows & Commands
+├── .github/ISSUE_TEMPLATE/  # ✅ GitHub Issue Templates
+├── CLAUDE.md                # ✅ Projekt-spezifische Config
+└── package.json             # ✅ Unverändert (kein Überschreiben!)
 ```
 
 ### **GitHub Project Board Auto-Setup**
 ```
-┌─────────────────────────────────────────────────────────┐
-│ 📊 Main Development Board (Automatisch erstellt)       │
-├─────────┬─────────┬─────────┬─────────┬─────────────────┤
-│ Backlog │ Ready   │ To Do   │ Testing │ Done            │
-│ 📥 Auto │ 🤖 Agent│ 👤 Human│ 🔄 Auto │ ✅ Auto         │
-└─────────┴─────────┴─────────┴─────────┴─────────────────┘
+┌─────────────────────────────────────────────────────────────────────────┐
+│ 📊 Main Development Board (Automatisch erstellt)                       │
+├─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────────┤
+│ Backlog │ Ready   │ To Do   │ In Work │ Testing │ Review  │ Done        │
+│ 📥 Auto │ 🤖 Agent│ 👤 Human│ 💻 Dev  │ 🧪 Test │ 👥 Team │ ✅ Deploy   │
+└─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────────┘
 ```
 
 ## 🎯 Workflow nach der Integration
