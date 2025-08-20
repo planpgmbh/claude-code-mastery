@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "📚 Dokumentation"
+    url: "https://github.com/YOUR_USERNAME/claude-code-mastery/tree/main/docs"
+    about: "Vollständige Multi-Agent System Dokumentation"
+  - name: "🆘 Troubleshooting Guide"
+    url: "https://github.com/YOUR_USERNAME/claude-code-mastery/blob/main/docs/05_Troubleshooting_Guide.md"
+    about: "Häufige Probleme und Lösungen"
+  - name: "💬 Discussions"
+    url: "https://github.com/YOUR_USERNAME/claude-code-mastery/discussions"
+    about: "Community Fragen und Diskussionen"

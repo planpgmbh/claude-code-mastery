@@ -1,0 +1,71 @@
+name: "🐛 Bug Report"
+description: "Melde einen Bug für Analysis Agent Processing"
+title: "[BUG]: "
+labels: ["bug", "analysis-required"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🔍 Bug Report - Analysis Agent Pipeline
+        
+        Dieser Bug Report wird automatisch vom **Analysis Agent** verarbeitet und in die **Ready** Spalte verschoben.
+        
+  - type: input
+    id: environment
+    attributes:
+      label: "🌍 Umgebung"
+      description: "Browser, OS, Node.js Version"
+      placeholder: "z.B. Chrome 119, macOS 14, Node.js 18.17"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: "❌ Aktuelles Verhalten"
+      description: "Was passiert derzeit?"
+      placeholder: "Beschreiben Sie das Problem detailliert..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: "✅ Erwartetes Verhalten"
+      description: "Was sollte passieren?"
+      placeholder: "Beschreiben Sie das erwartete Verhalten..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: "🔄 Reproduktionsschritte"
+      description: "Schritt-für-Schritt Anleitung"
+      placeholder: |
+        1. Gehe zu...
+        2. Klicke auf...
+        3. Sehe Fehler...
+    validations:
+      required: true
+      
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "📋 Zusätzlicher Kontext"
+      description: "Screenshots, Error Logs, relevante Details"
+      placeholder: "Paste hier Screenshots oder Error Logs..."
+    validations:
+      required: false
+      
+  - type: checkboxes
+    id: analysis-priority
+    attributes:
+      label: "🎯 Analysis Agent Priorität"
+      description: "Wird vom Analysis Agent zur Priorisierung verwendet"
+      options:
+        - label: "🔥 Kritisch - Blockiert Hauptfunktionalität"
+        - label: "⚠️ Hoch - Beeinträchtigt wichtige Features"
+        - label: "🔧 Normal - Standard Bug-Fixing"
+        - label: "🐞 Niedrig - Minor Issue, kosmetisch"

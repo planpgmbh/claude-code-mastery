@@ -1,0 +1,76 @@
+{
+  "name": "claude-code-mastery-template",
+  "version": "1.0.0",
+  "description": "🤖 Integriert Multi-Agent Claude Code System in bestehende Web-Projekte",
+  "main": "dist/index.js",
+  "bin": {
+    "claude-mastery": "bin/claude-mastery.js",
+    "claude-code-mastery": "bin/claude-mastery.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "prepublishOnly": "npm run build",
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "keywords": [
+    "claude-code",
+    "ai-development",
+    "multi-agent",
+    "automation",
+    "github",
+    "template",
+    "workflow",
+    "integration"
+  ],
+  "author": "Claude Code Mastery Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/claude-code-mastery-template.git"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/claude-code-mastery-template#readme",
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/claude-code-mastery-template/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "files": [
+    "dist/",
+    "bin/",
+    "templates/",
+    "scripts/",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.0",
+    "fs-extra": "^11.1.0",
+    "axios": "^1.6.0",
+    "yaml": "^2.3.0",
+    "glob": "^10.3.0",
+    "commander": "^11.1.0",
+    "ora": "^7.0.0",
+    "boxen": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/fs-extra": "^11.0.0",
+    "@types/inquirer": "^9.0.0",
+    "typescript": "^5.0.0",
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0",
+    "eslint": "^8.50.0",
+    "prettier": "^3.0.0"
+  },
+  "peerDependencies": {
+    "@anthropic-ai/claude-code": ">=1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

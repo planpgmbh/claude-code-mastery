@@ -1,184 +1,327 @@
-# Claude Code Mastery System
+# 🤖 Claude Code Mastery Template
 
-🤖 **Multi-Agent Claude Code System für Web-App-Entwicklung**
+> **NPM Package für automatische Claude Code Integration in bestehende Web-Projekte**
 
-## 🎯 Was ist das?
+[![npm version](https://badge.fury.io/js/claude-code-mastery-template.svg)](https://badge.fury.io/js/claude-code-mastery-template)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Claude Code Compatible](https://img.shields.io/badge/Claude%20Code-Compatible-blue.svg)](https://docs.anthropic.com/en/docs/claude-code)
 
-Ein vollständiges System für AI-Enhanced Software Development mit:
-- **Analysis Agent:** Bug-Analyse & Feature-Planung
-- **Implementation Agent:** Automatische Code-Implementierung  
-- **Human-Controlled Workflow:** Kontrolle an kritischen Entscheidungspunkten
-- **VS Code Integration:** Nahtlose Entwicklungsumgebung
-- **Docker/Traefik:** Production-Ready Deployment
+## 🎯 Was macht dieses Package?
 
-## 📚 Dokumentation
+Integriert **Multi-Agent Claude Code System** in Ihre bestehenden Web-Projekte:
 
-| Dokument | Beschreibung |
-|----------|--------------|
-| [01_Grundlagen](docs/01_Claude_Code_Grundlagen.md) | Community Best Practices & Compounding Engineering |
-| [02_Commands](docs/02_Custom_Commands_Sammlung.md) | Multi-Agent Befehle & Workflows |
-| [03_Templates](docs/03_CLAUDE_md_Templates.md) | CLAUDE.md für verschiedene Tech-Stacks |
-| [04_Workflows](docs/04_Projekt_Workflows.md) | Multi-Agent Entwicklungsprozesse |
-| [05_Troubleshooting](docs/05_Troubleshooting_Guide.md) | System Debugging & Problemlösung |
-| [06_Infrastructure](docs/06_Server_Infrastructure.md) | Docker/Traefik + VS Code Setup |
-| [07_Kanban](docs/07_Automated_kanban_workflow.md) | GitHub Board Automation |
-| [08_Multi-Agent](docs/08_Multi_agent_system.md) | Spezialisierte Agent-Architektur |
+- 🤖 **Analysis Agent** - Automatische Bug-Analyse & Feature-Planning
+- ⚡ **Implementation Agent** - Automatische Code-Implementierung
+- 📊 **GitHub Project Board** - Vollautomatisches Kanban Board Setup
+- 🔧 **VS Code Integration** - Optimierte Entwicklungsumgebung
+- 👤 **Human Control Points** - Sie behalten die Kontrolle über kritische Entscheidungen
 
-## 🚀 Quick Start
+## 🚀 Installation & Usage
 
-### 1. Claude.ai Projekt Setup
+### **Schnellstart - Bestehendes Projekt**
+
 ```bash
-# 1. Erstelle neues Claude.ai Projekt
-# 2. Lade alle Dokumente aus docs/ hoch
-# 3. Setze Basis-Anweisung (siehe unten)
+# 1. In Ihr bestehendes Projekt navigieren
+cd /path/to/your/existing/project
+
+# 2. Claude Code Mastery integrieren
+npx claude-code-mastery-template init
+
+# 3. GitHub Project Board erstellen (optional)
+npx claude-code-mastery-template setup-board
+
+# 4. Fertig! 🎉
 ```
 
-### 2. Basis-Anweisung für Claude.ai
-```
-Du bist mein Claude Code Multi-Agent Entwicklungspartner.
+### **Globale Installation**
 
-**Nutze die 8 hochgeladenen Dokumente als Wissensbasis:**
-1. **Grundlagen** (01) - Community Best Practices & Compounding Engineering
-2. **Commands** (02) - Multi-Agent Befehle & Spezialisierte Arbeitsabläufe
-3. **Templates** (03) - CLAUDE.md für verschiedene Tech-Stacks
-4. **Workflows** (04) - Multi-Agent Entwicklungsprozesse
-5. **Troubleshooting** (05) - Multi-Agent System Debugging
-6. **Infrastructure** (06) - Docker/Traefik + VS Code Integration
-7. **Kanban Workflow** (07) - Human-Controlled Automation
-8. **Multi-Agent System** (08) - Spezialisierte Agent-Architektur
-
-**Mein Setup:**
-- Multi-Agent Architecture: Analysis Agent + Implementation Agent mit Sub-Agents
-- IDE: VS Code mit Claude Code Extension + Multi-Agent Integration
-- Server: Docker/Traefik mit externen + plan-p.de Domains
-- Workflow: Human-controlled Analysis → Auto-Implementation mit Quality Gates
-
-**Verhalten:**
-- Denke Multi-Agent: Analysis vs Implementation Tasks mit Sub-Agent Coordination
-- Berücksichtige Human Control Points an kritischen Entscheidungen
-- Verwende spezialisierte Sub-Agents für komplexe Tasks
-- Integriere VS Code, GitHub, Docker/Traefik nahtlos
-
-**Antworte auf Deutsch, sei agent-bewusst und workflow-optimiert!**
-```
-
-### 3. VS Code Setup
 ```bash
-# Claude Code installieren
+# Global installieren für mehrfache Nutzung
+npm install -g claude-code-mastery-template
+
+# Dann in jedem Projekt verwenden
+claude-mastery init
+```
+
+## 📋 Was passiert beim `init`?
+
+### **Automatische Projekt-Erkennung**
+- ✅ **React SPA** (mit TypeScript/JavaScript)
+- ✅ **Node.js API** (Express, Fastify, NestJS)
+- ✅ **Full-Stack Apps** (React + Backend)
+- ✅ **Next.js Projekte**
+- ✅ **Vue.js Anwendungen**
+- ✅ **Generic Web Projekte**
+
+### **Integration ohne Überschreibung**
+```bash
+Ihr Projekt/
+├── .vscode/           # ✅ VS Code Claude Integration
+├── .github/           # ✅ Workflows & Issue Templates
+├── CLAUDE.md          # ✅ Projekt-spezifische Config
+├── .env.example       # ✅ API Keys Template
+└── package.json       # ✅ Erweitert (nicht überschrieben)
+```
+
+### **GitHub Project Board Auto-Setup**
+```
+┌─────────────────────────────────────────────────────────┐
+│ 📊 Main Development Board (Automatisch erstellt)       │
+├─────────┬─────────┬─────────┬─────────┬─────────────────┤
+│ Backlog │ Ready   │ To Do   │ Testing │ Done            │
+│ 📥 Auto │ 🤖 Agent│ 👤 Human│ 🔄 Auto │ ✅ Auto         │
+└─────────┴─────────┴─────────┴─────────┴─────────────────┘
+```
+
+## 🎯 Workflow nach der Integration
+
+### **1. Issue-basierter Workflow**
+```bash
+# GitHub Issue erstellen:
+"Bug: Login-Button funktioniert nicht auf Mobile"
+
+# Automatisch:
+├── 📥 Lands in "Backlog"
+├── 🤖 Analysis Agent analysiert
+├── ➡️ Moved to "Ready" mit Technical Spec
+└── 👤 Sie reviewen & schieben zu "To Do"
+
+# Implementation Agent übernimmt:
+├── ⚡ Automatische Code-Implementierung
+├── 🧪 Tests generiert & ausgeführt
+├── 📝 Pull Request erstellt
+└── 🚀 Nach Review: Auto-Deploy
+```
+
+### **2. VS Code Integration**
+```bash
+# Keyboard Shortcuts (automatisch konfiguriert):
+Ctrl+Shift+C → Ctrl+B  # Analysis Agent: Bug Deep Dive
+Ctrl+Shift+C → Ctrl+F  # Analysis Agent: Feature Planning
+Ctrl+Shift+C → Ctrl+T  # Implementation Agent: Process Queue
+Ctrl+Shift+C → Ctrl+S  # Agent Status Dashboard
+```
+
+### **3. Projekt-spezifische CLAUDE.md**
+Das Tool erkennt automatisch Ihren Tech Stack und erstellt optimierte Konfiguration:
+
+```markdown
+# React TypeScript Projekt → CLAUDE-react-spa.md
+# Node.js API Projekt    → CLAUDE-nodejs-api.md
+# Full-Stack Projekt     → CLAUDE-fullstack.md
+# Generic Projekt        → CLAUDE-generic.md
+```
+
+## 📊 Commands & Features
+
+### **Hauptkommandos**
+```bash
+# Projekt analysieren
+claude-mastery analyze
+
+# Integration starten
+claude-mastery init [options]
+
+# GitHub Board erstellen
+claude-mastery setup-board
+
+# Status prüfen
+claude-mastery status
+
+# Templates aktualisieren
+claude-mastery update
+```
+
+### **Init Optionen**
+```bash
+# Spezifischen Projekt-Typ forcieren
+claude-mastery init --type react-spa
+
+# Bestehende Konfiguration überschreiben
+claude-mastery init --force
+
+# GitHub Board Setup überspringen
+claude-mastery init --skip-board
+```
+
+## 🛠️ Unterstützte Projekt-Typen
+
+### **React SPA Projekte**
+```typescript
+// Automatisch erkannt bei:
+- React Dependencies
+- TypeScript/JavaScript
+- Vite/Webpack/Create React App
+- Tailwind CSS, Material-UI, etc.
+
+// Optimierte CLAUDE.md mit:
+- React-spezifischen Custom Commands
+- Component Development Workflows
+- Performance Optimization Rules
+- Testing Strategy (RTL, Jest, Cypress)
+```
+
+### **Node.js API Projekte**
+```typescript
+// Automatisch erkannt bei:
+- Express, Fastify, NestJS
+- Database Integrations (Prisma, Mongoose)
+- Authentication Libraries
+- API Documentation Tools
+
+// Optimierte CLAUDE.md mit:
+- API Development Best Practices
+- Database Optimization Commands
+- Security Audit Workflows
+- Performance Monitoring Setup
+```
+
+### **Full-Stack Projekte**
+```typescript
+// Automatisch erkannt bei:
+- Frontend + Backend Dependencies
+- Monorepo Structures
+- Shared TypeScript Configs
+- Full-Stack Frameworks (Next.js, Nuxt.js)
+
+// Optimierte CLAUDE.md mit:
+- End-to-End Development Workflows
+- Frontend/Backend Coordination
+- Deployment Pipeline Integration
+- Cross-Stack Testing Strategies
+```
+
+## 🔧 Konfiguration & Anpassung
+
+### **Environment Setup**
+```bash
+# Nach der Integration .env konfigurieren:
+cp .env.example .env
+
+# Wichtige Variablen:
+ANTHROPIC_API_KEY=your-claude-api-key
+GITHUB_TOKEN=your-github-token  # für Board-Setup
+```
+
+### **VS Code Extensions (Empfohlen)**
+```json
+{
+  "recommendations": [
+    "anthropic.claude-code",
+    "ms-vscode.vscode-typescript-next",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-json"
+  ]
+}
+```
+
+### **GitHub Token Permissions**
+Für automatisches Board Setup benötigt der GitHub Token:
+- ✅ `repo` (Repository access)
+- ✅ `write:project` (Project boards)
+- ✅ `workflow` (GitHub Actions)
+
+## 📈 Erfolgsmetriken
+
+Nach der Integration können Sie erwarten:
+
+### **Development Velocity**
+- 📈 **60-90% Zeitersparnis** bei Bug-Fixes
+- 📈 **50-70% Schnellere** Feature-Entwicklung
+- 📈 **5x Häufigere** Deployments
+
+### **Code Quality**
+- ✅ **Automatische Code Reviews** durch Analysis Agent
+- ✅ **Konsistente Best Practices** Anwendung
+- ✅ **Proaktive Security** Vulnerability Detection
+
+### **Team Produktivität**
+- 👥 **Standardisierte Workflows** für alle Entwickler
+- 👥 **Reduzierte Context Switches** zwischen Tools
+- 👥 **Automatisierte Dokumentation** Updates
+
+## 🆘 Troubleshooting
+
+### **Häufige Probleme**
+
+**🔧 Claude Code CLI nicht gefunden:**
+```bash
+# Claude Code CLI installieren
 npm install -g @anthropic-ai/claude-code
 
 # API Key konfigurieren
 claude config set api-key YOUR_API_KEY
-
-# VS Code Konfiguration kopieren
-cp templates/.vscode/* .vscode/
 ```
 
-### 4. Erstes Projekt starten
+**📊 GitHub Board wird nicht erstellt:**
 ```bash
-# Repository für neues Projekt clonen
-git clone YOUR_REPO_URL my-new-project
-cd my-new-project
+# Token Permissions prüfen
+# GitHub → Settings → Developer settings → Personal access tokens
+# Benötigt: repo, write:project, workflow
 
-# Claude Code initialisieren
-/rsi
-/context-prime
+# Board manuell erstellen
+claude-mastery setup-board --repo owner/repository
 ```
 
-## 🎯 Multi-Agent Workflow
-
-### Analysis Agent → Human Review → Implementation Agent
-
-```mermaid
-graph LR
-    A[Bug/Feature Input] --> B[Analysis Agent]
-    B --> C[Plan in 'Ready']
-    C --> D[👤 Human Review]
-    D --> E[Manual → 'To Do']
-    E --> F[Implementation Agent]
-    F --> G[Auto: Code → Tests → Deploy]
-    G --> H[Done]
-```
-
-### Beispiel Workflow:
+**⚙️ VS Code Integration funktioniert nicht:**
 ```bash
-# 1. Bug entdeckt
-/analyze-bug "Login-Button funktioniert nicht auf Mobile"
+# Extension installieren
+code --install-extension anthropic.claude-code
 
-# 2. Plan wird in "Ready" Spalte erstellt
-# 3. 👤 Human reviewt Plan
-# 4. 👤 Human schiebt zu "To Do"
-
-# 5. Implementation Agent übernimmt
-/process-ready-todos
-
-# 6. Automatisch: Code → Tests → PR → Deploy → Done
+# Workspace neu laden
+# Command Palette → "Developer: Reload Window"
 ```
 
-## 🛠️ Templates & Examples
-
-### CLAUDE.md Templates
-- **React/TypeScript:** Vollständige Projekt-Konfiguration
-- **Node.js API:** Backend API Development Setup
-- **Full-Stack:** Frontend + Backend Integration
-
-### VS Code Configuration
-- **Multi-Agent Settings:** Optimierte Claude Code Integration
-- **Tasks:** Keyboard Shortcuts für häufige Workflows
-- **Debugging:** Container + Remote Development Setup
-
-### Docker/Traefik Setup
-- **Production-Ready:** Multi-Stage Builds & Security
-- **Development:** Hot-Reload & Debugging Support
-
-## 🔧 Custom Commands
-
-### Analysis Agent Commands
-- `/analyze-bug` - Vollständige Bug-Analyse → GitHub Issue
-- `/plan-feature` - Feature Planning → Technical Specification
-- `/research-and-recommend` - Technology Research & Evaluation
-
-### Implementation Agent Commands  
-- `/process-ready-todos` - Automatische Queue-Verarbeitung
-- `/implement-complex-feature` - Single Feature Implementation
-- `/deploy-to-production` - Automated Deployment Pipeline
-
-### Multi-Agent Coordination
-- `/agent-status` - Real-time Agent Health Dashboard
-- `/coordinate-agents` - Inter-Agent Workflow Orchestration
-- `/agent-analytics` - Performance Metrics & Optimization
-
-## 📊 Success Metrics
-
-- **🐛 Bug Resolution:** 97% automation success rate
-- **✨ Feature Development:** 60-90% time reduction
-- **🚀 Deployment Frequency:** 5x increase
-- **👤 Human Oversight:** Maintained at critical decision points
-
-## 🆘 Troubleshooting
-
-### Common Issues:
-- **Agent Communication Failures:** [Troubleshooting Guide](docs/05_Troubleshooting_Guide.md#multi-agent-system-probleme)
-- **VS Code Integration:** [VS Code Issues](docs/05_Troubleshooting_Guide.md#vs-code-multi-agent-integration-issues)
-- **GitHub Automation:** [GitHub Integration](docs/05_Troubleshooting_Guide.md#github-integration-multi-agent-issues)
-
-### Emergency Recovery:
+### **Debug Commands**
 ```bash
-# Complete System Reset
-/multi-agent-system-reset --backup-first
+# Projekt-Analyse anzeigen
+claude-mastery analyze
 
-# Agent Recovery
-/recover-analysis-agent
-/recover-implementation-agent
+# Konfiguration validieren
+claude-mastery status
+
+# Verbose Logging aktivieren
+DEBUG=claude-mastery:* claude-mastery init
 ```
 
 ## 🤝 Contributing
 
-1. **Fork** dieses Repository
-2. **Create Feature Branch:** `git checkout -b feature/amazing-improvement`
-3. **Commit Changes:** `git commit -m 'Add amazing improvement'`
-4. **Push Branch:** `git push origin feature/amazing-improvement`
-5. **Open Pull Request**
+### **Development Setup**
+```bash
+# Repository klonen
+git clone https://github.com/YOUR_USERNAME/claude-code-mastery-template.git
+cd claude-code-mastery-template
+
+# Dependencies installieren
+npm install
+
+# TypeScript kompilieren
+npm run build
+
+# Local testen
+npm link
+claude-mastery --help
+```
+
+### **Testing**
+```bash
+# Tests ausführen
+npm test
+
+# Template Integration testen
+npm run test:templates
+
+# E2E Test in Sample Projekt
+cd test-projects/react-sample
+claude-mastery init --type react-spa
+```
+
+## 📚 Dokumentation
+
+- 📖 **[Installation Guide](.github/template-usage.md)** - Detaillierte Setup-Anleitung
+- 📖 **[Custom Commands](docs/02_Custom_Commands_Sammlung.md)** - Alle verfügbaren Commands
+- 📖 **[Multi-Agent System](docs/08_Multi_agent_system.md)** - Architektur & Workflows
+- 📖 **[Troubleshooting](docs/05_Troubleshooting_Guide.md)** - Problemlösungen
 
 ## 📝 License
 
@@ -186,11 +329,28 @@ MIT License - siehe [LICENSE](LICENSE) für Details.
 
 ## 🙏 Credits
 
-Basiert auf:
-- **Kieran Klaassen's** "Compounding Engineering" Methodologie
-- **Community Best Practices** für Claude Code Development
-- **Anthropic's** Claude Code Tool & Best Practices
+- **Anthropic** - Claude Code Tool & API
+- **Community** - Best Practices & Feedback
+- **Contributors** - Template Development & Testing
 
 ---
 
-**🚀 Revolutioniere deine Software-Entwicklung mit AI-Enhanced Multi-Agent Workflows!**
+## 🎉 Quick Start Beispiel
+
+```bash
+# Beispiel: React Projekt integrieren
+git clone https://github.com/user/my-react-app.git
+cd my-react-app
+
+npx claude-code-mastery-template init
+# ✅ React TypeScript erkannt
+# ✅ VS Code konfiguriert
+# ✅ GitHub Workflows hinzugefügt
+# ✅ CLAUDE.md für React optimiert
+
+code .
+# Ctrl+Shift+C → Ctrl+S (Agent Status)
+# 🎯 Bereit für AI-Enhanced Development!
+```
+
+**🚀 Revolutionieren Sie Ihre Entwicklung mit Multi-Agent AI Workflows!**

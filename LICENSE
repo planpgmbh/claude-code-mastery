@@ -1,0 +1,49 @@
+MIT License
+
+Copyright (c) 2025 Claude Code Mastery Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## Third-Party Software
+
+This project includes code and concepts from:
+
+### Anthropic Claude Code
+- License: Commercial License
+- Copyright: Anthropic PBC
+- Usage: Integration and automation workflows
+
+### Community Best Practices
+- Various MIT/Apache licensed open source projects
+- Community contributions and methodologies
+- See individual files for specific attributions
+
+## Contributing
+
+By contributing to this project, you agree that your contributions will be 
+licensed under the same MIT License.
+
+## Attribution
+
+If you use this template in your project, attribution is appreciated but not required:
+
+```
+Powered by Claude Code Mastery Template
+https://github.com/YOUR_USERNAME/claude-code-mastery
+```

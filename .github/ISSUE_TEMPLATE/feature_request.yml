@@ -1,0 +1,86 @@
+name: "✨ Feature Request"
+description: "Neue Feature Idee für Analysis Agent Planning"
+title: "[FEATURE]: "
+labels: ["enhancement", "analysis-required"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🏗️ Feature Request - Analysis Agent Pipeline
+        
+        Dieser Feature Request wird vom **Analysis Agent** analysiert und ein detaillierter Implementierungsplan erstellt.
+        
+  - type: textarea
+    id: problem-statement
+    attributes:
+      label: "🎯 Problem Statement"
+      description: "Welches Problem löst dieses Feature?"
+      placeholder: "Als [Benutzertyp] möchte ich [Ziel] damit ich [Nutzen] habe..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: "💡 Vorgeschlagene Lösung"
+      description: "Wie sollte das Feature funktionieren?"
+      placeholder: "Beschreiben Sie Ihre Lösungsidee..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: alternative-solutions
+    attributes:
+      label: "🔄 Alternative Lösungen"
+      description: "Welche anderen Ansätze gibt es?"
+      placeholder: "Haben Sie andere Lösungsansätze betrachtet?"
+    validations:
+      required: false
+      
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: "✅ Akzeptanzkriterien"
+      description: "Wann ist das Feature erfolgreich implementiert?"
+      placeholder: |
+        - [ ] Kriterium 1
+        - [ ] Kriterium 2
+        - [ ] Kriterium 3
+    validations:
+      required: true
+      
+  - type: checkboxes
+    id: feature-scope
+    attributes:
+      label: "📊 Feature Scope"
+      description: "Hilft dem Analysis Agent bei der Komplexitätsbewertung"
+      options:
+        - label: "🎨 UI/UX Changes - Frontend Komponenten"
+        - label: "🔧 Backend Logic - API/Database Changes"
+        - label: "🔌 Integration - Third-party Services"
+        - label: "⚡ Performance - Optimization Focus"
+        - label: "🔐 Security - Security-relevante Änderungen"
+        - label: "📱 Mobile - Mobile-spezifische Features"
+        
+  - type: dropdown
+    id: implementation-priority
+    attributes:
+      label: "🎯 Implementation Priorität"
+      description: "Wird vom Analysis Agent für Roadmap Planning verwendet"
+      options:
+        - "🔥 Must Have - Kritisch für nächsten Release"
+        - "⚡ Should Have - Wichtig, aber nicht blockierend"
+        - "🌟 Could Have - Nice-to-have Feature"
+        - "💭 Won't Have - Future Consideration"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: technical-considerations
+    attributes:
+      label: "🔧 Technische Überlegungen"
+      description: "Technische Details, Dependencies, Constraints"
+      placeholder: "Dependencies, Performance Considerations, Breaking Changes..."
+    validations:
+      required: false

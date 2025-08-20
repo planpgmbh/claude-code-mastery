@@ -1,0 +1,96 @@
+# Claude Code Mastery - .gitignore
+
+# 🔐 Environment & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.key
+*.pem
+
+# 📦 Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# 🏗️ Build outputs
+dist/
+build/
+.next/
+out/
+.nuxt/
+.vuepress/dist/
+.serverless/
+
+# 🧪 Testing
+coverage/
+*.lcov
+.nyc_output
+test-results/
+playwright-report/
+
+# 📱 Mobile
+*.ipa
+*.apk
+*.aab
+
+# 🔧 IDEs & Editors
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# 💾 OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 🚀 Deployment
+.vercel
+.netlify
+
+# 📊 Logs
+logs/
+*.log
+
+# 🔄 Cache
+.cache/
+.parcel-cache/
+.eslintcache
+
+# 🐳 Docker
+.dockerignore
+docker-compose.override.yml
+
+# 🤖 Claude Code specific
+.claude/
+claude-sessions/
+.claude-context/
+
+# 📈 Analytics & Monitoring
+.sentry/
+
+# 🗄️ Database
+*.sqlite
+*.sqlite3
+*.db
+
+# 🔒 Security scans
+.snyk
+
+# 📚 Documentation builds
+docs/.vuepress/dist/
+docs/_book/
+
+# 🎯 Project specific (add your own)
+# temp/
+# private/
