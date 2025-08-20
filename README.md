@@ -289,8 +289,8 @@ DEBUG=claude-mastery:* claude-mastery init
 ### **Development Setup**
 ```bash
 # Repository klonen
-git clone https://github.com/YOUR_USERNAME/claude-code-mastery-template.git
-cd claude-code-mastery-template
+git clone https://github.com/planpgmbh/claude-code-mastery.git
+cd claude-code-mastery
 
 # Dependencies installieren
 npm install

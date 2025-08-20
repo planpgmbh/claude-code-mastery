@@ -28,11 +28,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/claude-code-mastery-template.git"
+    "url": "https://github.com/planpgmbh/claude-code-mastery.git"
   },
-  "homepage": "https://github.com/YOUR_USERNAME/claude-code-mastery-template#readme",
+  "homepage": "https://github.com/planpgmbh/claude-code-mastery#readme",
   "bugs": {
-    "url": "https://github.com/YOUR_USERNAME/claude-code-mastery-template/issues"
+    "url": "https://github.com/planpgmbh/claude-code-mastery/issues"
   },
   "engines": {
     "node": ">=18.0.0",

@@ -7,5 +7,5 @@ console.log('  1. cd in Ihr Projekt-Verzeichnis');
 console.log('  2. claude-mastery init');
 console.log('  3. API Keys in .env konfigurieren');
 console.log('');
-console.log('📚 Dokumentation: https://github.com/YOUR_USERNAME/claude-code-mastery-template');
-console.log('🆘 Support: https://github.com/YOUR_USERNAME/claude-code-mastery-template/issues');
+console.log('📚 Dokumentation: https://github.com/planpgmbh/claude-code-mastery');
+console.log('🆘 Support: https://github.com/planpgmbh/claude-code-mastery/issues');
