@@ -1,0 +1,45 @@
+# VS Code Keyboard Shortcuts für Multi-Agent Claude Code
+
+[
+  {
+    "key": "ctrl+shift+c ctrl+b",
+    "command": "workbench.action.tasks.runTask",
+    "args": "🔍 Analysis Agent: Bug Deep Dive"
+  },
+  {
+    "key": "ctrl+shift+c ctrl+f",
+    "command": "workbench.action.tasks.runTask", 
+    "args": "🏗️ Analysis Agent: Feature Planning"
+  },
+  {
+    "key": "ctrl+shift+c ctrl+t",
+    "command": "workbench.action.tasks.runTask",
+    "args": "⚡ Implementation Agent: Process Queue"
+  },
+  {
+    "key": "ctrl+shift+c ctrl+s",
+    "command": "workbench.action.tasks.runTask",
+    "args": "📊 Agent Status Dashboard"
+  },
+  {
+    "key": "ctrl+shift+d ctrl+b",
+    "command": "workbench.action.tasks.runTask",
+    "args": "🐳 Docker: Build Development"
+  },
+  {
+    "key": "ctrl+shift+d ctrl+d",
+    "command": "workbench.action.tasks.runTask", 
+    "args": "🚀 Deploy to Production"
+  },
+  {
+    "key": "ctrl+shift+c ctrl+p",
+    "command": "claude.code.contextPrime",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+c ctrl+r",
+    "command": "claude.code.runCommand",
+    "args": "/rsi",
+    "when": "editorTextFocus"
+  }
+]

@@ -1,0 +1,49 @@
+# GitHub Actions Multi-Agent Workflow
+
+name: Multi-Agent Development Workflow
+
+on:
+  issues:
+    types: [opened, labeled, assigned]
+  pull_request:
+    types: [opened, synchronize, closed]
+
+jobs:
+  issue-automation:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'issues'
+    steps:
+      - name: Add to Project Board
+        uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: Main Development Board
+          column: Backlog
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Auto-approve Bug Reports
+        if: contains(github.event.issue.labels.*.name, 'bug')
+        uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: Main Development Board
+          column: Ready
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+  pr-automation:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Move to Testing
+        if: github.event.action == 'opened'
+        uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: Main Development Board
+          column: Testing
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Move to Done
+        if: github.event.action == 'closed' && github.event.pull_request.merged == true
+        uses: alex-page/github-project-automation-plus@v0.8.1
+        with:
+          project: Main Development Board
+          column: Done
+          repo-token: ${{ secrets.GITHUB_TOKEN }}

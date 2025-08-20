@@ -1,0 +1,78 @@
+# VS Code Tasks für Multi-Agent Claude Code
+
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🔍 Analysis Agent: Bug Deep Dive",
+      "type": "shell",
+      "command": "claude",
+      "args": ["--agent=analysis", "/analyze-bug-deep", "${input:bugDescription}"],
+      "group": "analysis",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "🏗️ Analysis Agent: Feature Planning",
+      "type": "shell", 
+      "command": "claude",
+      "args": ["--agent=analysis", "/plan-feature-comprehensive", "${input:featureDescription}"],
+      "group": "analysis"
+    },
+    {
+      "label": "⚡ Implementation Agent: Process Queue",
+      "type": "shell",
+      "command": "claude", 
+      "args": ["--agent=implementation", "/process-todo-queue-advanced"],
+      "group": "implementation"
+    },
+    {
+      "label": "🎯 Implementation Agent: Single Issue",
+      "type": "shell",
+      "command": "claude",
+      "args": ["--agent=implementation", "/implement-complex-feature", "${input:issueNumber}"],
+      "group": "implementation"
+    },
+    {
+      "label": "📊 Agent Status Dashboard",
+      "type": "shell",
+      "command": "claude",
+      "args": ["/agent-status"],
+      "group": "monitoring"
+    },
+    {
+      "label": "🐳 Docker: Build Development",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": ["up", "-d", "--build"],
+      "group": "build"
+    },
+    {
+      "label": "🚀 Deploy to Production",
+      "type": "shell",
+      "command": "claude",
+      "args": ["/deploy-to-production"],
+      "group": "deployment"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "bugDescription",
+      "description": "Bug Beschreibung (z.B. 'Login-Button funktioniert nicht auf Mobile')",
+      "type": "promptString"
+    },
+    {
+      "id": "featureDescription", 
+      "description": "Feature Beschreibung (z.B. 'Dashboard-Seite mit Analytics Charts')",
+      "type": "promptString"
+    },
+    {
+      "id": "issueNumber",
+      "description": "GitHub Issue Nummer (z.B. '123')",
+      "type": "promptString"
+    }
+  ]
+}

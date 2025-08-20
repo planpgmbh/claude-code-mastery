@@ -1,0 +1,24 @@
+# VS Code Konfiguration für Multi-Agent Claude Code
+
+## settings.json
+{
+  "claude.code.enabled": true,
+  "claude.multiAgent.enabled": true,
+  "claude.agents.analysis.autoStart": true,
+  "claude.agents.implementation.autoStart": false,
+  "claude.code.context.autoLoad": [
+    "CLAUDE.md",
+    "package.json", 
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "claude.code.context.exclude": [
+    "node_modules/**",
+    "dist/**",
+    ".git/**",
+    "*.log"
+  ],
+  "docker.defaultPlatform": "linux/amd64",
+  "remote.autoForwardPorts": true,
+  "github.projects.defaultBoard": "Main Development Board"
+}
