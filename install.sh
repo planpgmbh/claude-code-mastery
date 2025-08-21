@@ -1,28 +1,28 @@
 #!/bin/bash
 
-# 🤖 Claude Code Mastery - Installation Script
+# Claude Code Mastery - Installation Script
 # Vereinfachte Installation für bestehende Projekte
 
 set -e
 
-echo "🤖 Claude Code Mastery Installation"
-echo "===================================="
+echo "Claude Code Mastery Installation"
+echo "================================"
 echo ""
 
 # Check prerequisites
 if ! command -v git &> /dev/null; then
-    echo "❌ Git ist nicht installiert"
+    echo "Git ist nicht installiert"
     exit 1
 fi
 
 if ! command -v node &> /dev/null; then
-    echo "❌ Node.js ist nicht installiert"
+    echo "Node.js ist nicht installiert"
     exit 1
 fi
 
 # Check if we're in a git repository
 if [ ! -d ".git" ]; then
-    echo "❌ Nicht in einem Git Repository"
+    echo "Nicht in einem Git Repository"
     echo "Bitte navigiere in dein Projekt-Verzeichnis"
     exit 1
 fi
@@ -30,21 +30,21 @@ fi
 # Get repository info
 REPO_URL=$(git config --get remote.origin.url)
 if [ -z "$REPO_URL" ]; then
-    echo "❌ Keine GitHub Repository URL gefunden"
+    echo "Keine GitHub Repository URL gefunden"
     exit 1
 fi
 
 # Extract repository name from URL
 REPO_NAME=$(echo $REPO_URL | sed 's/.*\/\([^.]*\)\.git/\1/' | sed 's/.*\/\([^/]*\)$/\1/')
 
-echo "🔍 Analysiere Projekt..."
-echo "✅ Git Repository: $REPO_NAME"
+echo "Analysiere Projekt..."
+echo "Git Repository: $REPO_NAME"
 
 # Check for package.json and set default project type
 PROJECT_TYPE="Generic Project"
 
 if [ -f "package.json" ]; then
-    echo "✅ package.json gefunden"
+    echo "package.json gefunden"
     # Try to detect project type
     if grep -q "react" package.json; then
         PROJECT_TYPE="React"
@@ -58,17 +58,17 @@ if [ -f "package.json" ]; then
     else
         PROJECT_TYPE="Web Project"
     fi
-    echo "✅ Projekt-Typ erkannt: $PROJECT_TYPE"
+    echo "Projekt-Typ erkannt: $PROJECT_TYPE"
 else
-    echo "⚠️ Keine package.json gefunden - verwende generischen Typ"
+    echo "Keine package.json gefunden - verwende generischen Typ"
 fi
 
 echo ""
-echo "📋 Claude Code Mastery Setup"
+echo "Claude Code Mastery Setup"
 echo ""
 
 # Confirm project type
-echo "🎯 Projekt-Typ erkannt: $PROJECT_TYPE"
+echo "Projekt-Typ erkannt: $PROJECT_TYPE"
 read -p "   Korrekt? (Y/n): " -n 1 -r
 echo ""
 if [[ $REPLY =~ ^[Nn]$ ]]; then
@@ -77,7 +77,7 @@ fi
 
 # GitHub Board setup
 echo ""
-echo "📊 GitHub Project Board erstellen?"
+echo "GitHub Project Board erstellen?"
 echo "   Repository: $REPO_NAME"
 read -p "   Board Name [Main Development Board]: " BOARD_NAME
 BOARD_NAME=${BOARD_NAME:-"Main Development Board"}
@@ -91,7 +91,7 @@ fi
 
 if [ "$CREATE_BOARD" = true ]; then
     echo ""
-    echo "🔑 Für GitHub Board-Erstellung wird ein Personal Access Token benötigt"
+    echo "Für GitHub Board-Erstellung wird ein Personal Access Token benötigt"
     echo "   Erstelle einen Token hier: https://github.com/settings/tokens/new"
     echo "   Benötigte Permissions: repo, write:org"
     echo ""
@@ -101,41 +101,41 @@ fi
 
 # Create directories
 echo ""
-echo "📁 Erstelle Projekt-Struktur..."
+echo "Erstelle Projekt-Struktur..."
 mkdir -p docs
 mkdir -p .github/ISSUE_TEMPLATE
 
 # Download and copy essential docs
-echo "✅ Lade Claude Code Dokumentation..."
+echo "Lade Claude Code Dokumentation..."
 
 REPO_BASE="https://raw.githubusercontent.com/planpgmbh/claude-code-mastery/main"
 
 curl -s "$REPO_BASE/docs/01_Claude_Code_Grundlagen.md" -o docs/01_Claude_Code_Grundlagen.md
-echo "✅ docs/01_Claude_Code_Grundlagen.md kopiert"
+echo "docs/01_Claude_Code_Grundlagen.md kopiert"
 
 curl -s "$REPO_BASE/docs/02_Custom_Commands_Sammlung.md" -o docs/02_Custom_Commands_Sammlung.md  
-echo "✅ docs/02_Custom_Commands_Sammlung.md kopiert"
+echo "docs/02_Custom_Commands_Sammlung.md kopiert"
 
 curl -s "$REPO_BASE/docs/07_Automated_kanban_workflow.md" -o docs/07_Automated_kanban_workflow.md
-echo "✅ docs/07_Automated_kanban_workflow.md kopiert"
+echo "docs/07_Automated_kanban_workflow.md kopiert"
 
 curl -s "$REPO_BASE/docs/08_Multi_agent_system.md" -o docs/08_Multi_agent_system.md
-echo "✅ docs/08_Multi_agent_system.md kopiert"
+echo "docs/08_Multi_agent_system.md kopiert"
 
 # Create project-specific CLAUDE.md
-echo "✅ Erstelle CLAUDE.md für $PROJECT_TYPE..."
+echo "Erstelle CLAUDE.md für $PROJECT_TYPE..."
 
 cat > CLAUDE.md << EOF
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## 📊 Project Overview
+## Project Overview
 - **Name:** $REPO_NAME
 - **Type:** $PROJECT_TYPE Project
 - **Claude Code Mastery:** Enabled
 
-## 🏗️ Architecture & Structure
+## Architecture & Structure
 
 ### Development Commands
 \`\`\`bash
@@ -153,7 +153,7 @@ $(if [ -f "package.json" ]; then
 fi)
 \`\`\`
 
-## 🎯 Claude Code Multi-Agent Integration
+## Claude Code Multi-Agent Integration
 
 ### Analysis Agent
 - Analyzes bugs and creates technical specifications
@@ -171,7 +171,7 @@ fi)
 - Approve implementation by moving to "To Do"
 - Final review and deployment approval
 
-## 🚀 Workflow
+## Workflow
 
 1. **Create GitHub Issue** → Lands in Backlog
 2. **Analysis Agent** analyzes → Moves to Ready
@@ -180,7 +180,7 @@ fi)
 5. **Testing & Review** → Quality assurance
 6. **Deploy & Done** → Feature complete
 
-## 📚 Documentation
+## Documentation
 
 - \`docs/01_Claude_Code_Grundlagen.md\` - Basic workflow commands
 - \`docs/02_Custom_Commands_Sammlung.md\` - Available custom commands  
@@ -189,11 +189,11 @@ fi)
 
 ---
 
-**🤖 Powered by Claude Code Mastery**
+**Powered by Claude Code Mastery**
 EOF
 
 # Create GitHub Issue Templates
-echo "✅ Erstelle GitHub Issue Templates..."
+echo "Erstelle GitHub Issue Templates..."
 
 cat > .github/ISSUE_TEMPLATE/bug_report.md << 'EOF'
 ---
@@ -205,25 +205,25 @@ assignees: ''
 projects: ['Main Development Board']
 ---
 
-## 🐛 Bug Description
+## Bug Description
 A clear and concise description of what the bug is.
 
-## 🔄 Steps to Reproduce
+## Steps to Reproduce
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
 
-## ✅ Expected Behavior
+## Expected Behavior
 A clear description of what you expected to happen.
 
-## 📱 Environment
+## Environment
 - Device: [e.g. iPhone6]
 - OS: [e.g. iOS8.1]
 - Browser [e.g. stock browser, safari]
 - Version [e.g. 22]
 
-## 📎 Additional Context
+## Additional Context
 Add any other context about the problem here.
 EOF
 
@@ -237,50 +237,50 @@ assignees: ''
 projects: ['Main Development Board']
 ---
 
-## 🚀 Feature Description
+## Feature Description
 A clear and concise description of what you want to happen.
 
-## 💡 Motivation
+## Motivation
 Why is this feature needed? What problem does it solve?
 
-## 🎯 Acceptance Criteria
+## Acceptance Criteria
 - [ ] Criterion 1
 - [ ] Criterion 2
 - [ ] Criterion 3
 
-## 🔧 Technical Considerations
+## Technical Considerations
 Any technical requirements or constraints to consider.
 
-## 📎 Additional Context
+## Additional Context
 Add any other context or screenshots about the feature request here.
 EOF
 
 # GitHub Board setup via API (if token provided)
 if [ "$CREATE_BOARD" = true ] && [ -n "$GITHUB_TOKEN" ]; then
     echo ""
-    echo "📊 Erstelle GitHub Project Board..."
+    echo "Erstelle GitHub Project Board..."
     
     # This would need the actual GitHub API implementation
-    echo "✅ Board '$BOARD_NAME' Konfiguration bereit"
+    echo "Board '$BOARD_NAME' Konfiguration bereit"
     echo "   (GitHub API Implementation erforderlich)"
 fi
 
 # Final success message
 echo ""
-echo "🎉 Claude Code Mastery erfolgreich installiert!"
+echo "Claude Code Mastery erfolgreich installiert!"
 echo ""
-echo "📋 Dein Projekt enthält jetzt:"
+echo "Dein Projekt enthält jetzt:"
 echo "├── docs/                    # Claude Code Workflows & Commands"
 echo "├── CLAUDE.md                # Projekt-spezifische Konfiguration"  
 echo "└── .github/ISSUE_TEMPLATE/  # Issue Templates für Board"
 echo ""
 
 if [ "$CREATE_BOARD" = true ]; then
-    echo "📊 GitHub Board: https://github.com/$(echo $REPO_URL | sed 's/.*github.com[:/]\([^.]*\)\.git.*/\1/')/projects"
+    echo "GitHub Board: https://github.com/$(echo $REPO_URL | sed 's/.*github.com[:/]\([^.]*\)\.git.*/\1/')/projects"
 fi
 
 echo ""
-echo "🚀 Nächste Schritte:"
+echo "Nächste Schritte:"
 echo "1. Claude Code Session starten:"
 echo "   claude init"
 echo ""
@@ -294,4 +294,4 @@ echo "   - Claude analysiert → verschiebt zu Ready"
 echo "   - Du reviewst → verschiebst zu To Do"  
 echo "   - Claude implementiert automatisch"
 echo ""
-echo "✨ Claude Code Multi-Agent System ist einsatzbereit!"
+echo "Claude Code Multi-Agent System ist einsatzbereit!"
