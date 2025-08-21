@@ -40,7 +40,9 @@ REPO_NAME=$(echo $REPO_URL | sed 's/.*\/\([^.]*\)\.git/\1/' | sed 's/.*\/\([^/]*
 echo "🔍 Analysiere Projekt..."
 echo "✅ Git Repository: $REPO_NAME"
 
-# Check for package.json
+# Check for package.json and set default project type
+PROJECT_TYPE="Generic Project"
+
 if [ -f "package.json" ]; then
     echo "✅ package.json gefunden"
     # Try to detect project type
@@ -57,6 +59,8 @@ if [ -f "package.json" ]; then
         PROJECT_TYPE="Web Project"
     fi
     echo "✅ Projekt-Typ erkannt: $PROJECT_TYPE"
+else
+    echo "⚠️ Keine package.json gefunden - verwende generischen Typ"
 fi
 
 echo ""
