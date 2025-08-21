@@ -18,39 +18,56 @@ Integriert **Multi-Agent Claude Code System** in Ihre bestehenden Web-Projekte:
 
 ## 🚀 Installation & Usage
 
-### **Schnellstart - Ein-Befehl Installation**
+### **Einfache 3-Schritte Installation**
 
 ```bash
 # 1. In Ihr bestehendes Projekt navigieren
 cd /path/to/your/existing/project
 
-# 2. Claude Code Mastery installieren (alles automatisch)
-curl -s https://raw.githubusercontent.com/planpgmbh/claude-code-mastery/main/install.sh | bash
+# 2. Essentielle Files herunterladen
+mkdir -p docs .github/ISSUE_TEMPLATE
 
-# 3. Claude Code starten
+# Claude Code Dokumentation
+curl -o docs/01_Claude_Code_Grundlagen.md https://raw.githubusercontent.com/planpgmbh/claude-code-mastery/main/docs/01_Claude_Code_Grundlagen.md
+curl -o docs/02_Custom_Commands_Sammlung.md https://raw.githubusercontent.com/planpgmbh/claude-code-mastery/main/docs/02_Custom_Commands_Sammlung.md
+curl -o docs/07_Automated_kanban_workflow.md https://raw.githubusercontent.com/planpgmbh/claude-code-mastery/main/docs/07_Automated_kanban_workflow.md
+curl -o docs/08_Multi_agent_system.md https://raw.githubusercontent.com/planpgmbh/claude-code-mastery/main/docs/08_Multi_agent_system.md
+
+# CLAUDE.md Template
+curl -o CLAUDE.md https://raw.githubusercontent.com/planpgmbh/claude-code-mastery/main/CLAUDE-template.md
+
+# GitHub Issue Templates
+curl -o .github/ISSUE_TEMPLATE/bug_report.md https://raw.githubusercontent.com/planpgmbh/claude-code-mastery/main/templates/github-issue-templates/bug_report.md
+curl -o .github/ISSUE_TEMPLATE/feature_request.md https://raw.githubusercontent.com/planpgmbh/claude-code-mastery/main/templates/github-issue-templates/feature_request.md
+
+# 3. CLAUDE.md anpassen und Claude Code starten
+# Bearbeite CLAUDE.md: Projekt-Name und Commands eintragen
 claude init && claude /rsi
 
 # 4. Fertig! 🎉
 ```
 
-## 📋 Was passiert bei der Installation?
+## 📋 Was wird installiert?
 
-### **Automatische Projekt-Erkennung**
-- ✅ **React SPA** (mit TypeScript/JavaScript)
-- ✅ **Node.js API** (Express, Fastify, NestJS)
-- ✅ **Full-Stack Apps** (React + Backend)
-- ✅ **Next.js Projekte**
-- ✅ **Vue.js Anwendungen**
-- ✅ **Generic Web Projekte**
-
-### **Was wird installiert (ohne Überschreibung)**
+### **Files die heruntergeladen werden:**
 ```bash
 Ihr Projekt/
-├── docs/                    # ✅ Claude Code Workflows & Commands
-├── .github/ISSUE_TEMPLATE/  # ✅ GitHub Issue Templates
-├── CLAUDE.md                # ✅ Projekt-spezifische Config
-└── package.json             # ✅ Unverändert (kein Überschreiben!)
+├── docs/                              # Claude Code Workflows & Commands
+│   ├── 01_Claude_Code_Grundlagen.md   # Basis-Workflows und Commands
+│   ├── 02_Custom_Commands_Sammlung.md # Erweiterte Commands
+│   ├── 07_Automated_kanban_workflow.md # GitHub Board Automation
+│   └── 08_Multi_agent_system.md       # Multi-Agent Koordination
+├── .github/ISSUE_TEMPLATE/             # GitHub Issue Templates
+│   ├── bug_report.md                   # Bug Report Template
+│   └── feature_request.md              # Feature Request Template
+├── CLAUDE.md                           # Projekt-spezifische Config (Template)
+└── package.json                        # ✅ Unverändert (kein Überschreiben!)
 ```
+
+### **Nach der Installation anpassen:**
+1. **CLAUDE.md bearbeiten** - Projekt-Name und Commands eintragen
+2. **GitHub Project Board erstellen** - Für automatische Issue-Workflows
+3. **Claude Code starten** - `claude init && claude /rsi`
 
 ### **GitHub Project Board Auto-Setup**
 ```
